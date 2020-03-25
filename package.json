@@ -1,22 +1,36 @@
 {
-  "name": "chaikovsky",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/crococoders/chaikovsky.git"
-  },
-  "author": "Aidar Nugmanov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/crococoders/chaikovsky/issues"
-  },
-  "homepage": "https://github.com/crococoders/chaikovsky#readme",
-  "devDependencies": {
-    "typescript": "^3.8.3"
-  }
+    "name": "chaikovsky",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint src/**/*.ts",
+        "compile": "tsc -p tsconfig.json",
+        "build": "babel src --out-dir lib --extensions '.ts,.tsx'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crococoders/chaikovsky.git"
+    },
+    "author": "Aidar Nugmanov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/crococoders/chaikovsky/issues"
+    },
+    "homepage": "https://github.com/crococoders/chaikovsky#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/preset-typescript": "^7.9.0",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "prettier": "^2.0.2",
+        "typescript": "^3.8.3"
+    }
 }
