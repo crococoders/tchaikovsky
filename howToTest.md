@@ -1,7 +1,7 @@
 [Jest](https://jestjs.io/docs/en/expect) main testing framework
 [Enzyme](https://enzymejs.github.io/enzyme) - Helper testing framework for getting elements from the DOM
 
-###Basic settings:
+### Basic settings:
 
 1. Create '**tests**' folder in component's folder
 2. Create <my-component>.spec.tsx
@@ -10,7 +10,7 @@
    - import React from 'react';
    - import { MyCompnent } from '../MyCompnent'; // your components
 
-###Unit testing of component:
+### Unit testing of component:
 
 1. - import { shallow } from 'enzyme';
      shallow or mount or render
@@ -41,7 +41,7 @@ expect(wrapper.html()).toMatch('<div>Hello Jest!</div>');
 4. type 'npm test' or 'npm run test' in command line
 5. wait until it finishes and check results in command line window
 
-###Snapshot testing of component:
+### Snapshot testing of component:
 
 1. import renderer from 'react-test-renderer';
 2. write your test using 'test' or 'it' function:
