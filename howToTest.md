@@ -12,7 +12,7 @@
 
 ### Unit testing of component:
 
-1. - import { shallow } from 'enzyme';
+1.  import { shallow } from 'enzyme';
      shallow or mount or render
      You should read enzyme [API reference](https://enzymejs.github.io/enzyme/docs/api/) to
 
@@ -70,7 +70,7 @@ expect(wrapper.html()).toMatch('<div>Hello Jest!</div>');
 ```
 
 4. type 'npm test' in command line
-   //first time test is stores your component snapshot in **snapshots** folder
-   //second and further times test will check if your component has any changes
+   - first time test is stores your component snapshot in **snapshots** folder
+   - second and further times test will check if your component has any changes
    - in case if you changed your component and you need to update snapshot run 'npm run test:snapshot'
 5. wait until it finishes and check results in command line window
