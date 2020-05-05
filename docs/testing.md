@@ -1,5 +1,7 @@
 [Jest](https://jestjs.io/docs/en/expect) - Main testing framework<br/>
-[Enzyme](https://enzymejs.github.io/enzyme) - Helper testing framework for getting elements from the DOM
+[Enzyme](https://enzymejs.github.io/enzyme) - Helper testing framework for getting elements from the DOM<br/>
+[Cucumber](https://cucumber.io/) - BDD testing framework with Gherkin syntax
+
 
 ### Basic settings:
 
@@ -99,3 +101,53 @@
    - second and further times test will check if your component has any changes
    - in case if you changed your component and you need to update snapshot run `npm run test:snapshot`
 6. Wait until it finishes and check results in command line window
+
+
+###BDD testing with Cucumber.js
+1. Create `*.feature` file in `/features` folder and write your `Feature: Description of your feature`. It has to be clear and easy understandable.
+2. Write your test scenario `Scenario: One of many scenarios that user can do`
+3. Write "Given" `Given: Pre-conditions to the test`
+4. Write "When" `When: Some behavior that should be triggered`
+5. Write "Then" `Then: Changes that you expect`
+  More about Given,When,Then you can read [here](https://martinfowler.com/bliki/GivenWhenThen.html)
+
+
+1) Create `YourSteps.ts` file in `/step_definitions` folder for testing by scenarios that declared in `/features`
+2)  ```javascript
+      import { binding, given, then, when } from 'cucumber-tsflow'; //cucumber.js for typescript
+      const assert = require('assert'); // basic node built-in assert 
+    ```
+3) You should start with `@binding()` line at the beginning of your test class
+4) ```javascript
+      export class ExampleSteps { 
+        //Your code here 
+      }
+    ``` 
+5) Declare variables at the top:
+   ```javascript  
+    private today!: string;
+    private actualAnswer!: string;
+    ```
+6)   
+    ```javascript 
+      @given(/today is Sunday/) // You should write in brackets exactly same as you wrote "Given" at *.feature file
+      public givenTodayIsSunday() { //you can write any name of function, but try to use clear and understandable names
+        this.today = 'Sunday';
+      }
+      ```
+7) ```javascript   
+      @when(/I ask whether it's Friday yet/)
+      public whenAskIsItFriday() {
+        this.actualAnswer = this.isItFriday(this.today);
+      }
+    ```
+8)  ```javascript
+      @then(/I should be told "([^"]*)"/) 
+      // "([^"]*)" means that it assumes string that pass as parameter to function below
+      // \d* assumes series of digits (or nothing)
+      public accountBalanceShouldEqual(expectedAnswer: string) {
+        assert.equal(this.actualAnswer, expectedAnswer);
+      }
+    ```
+For full list of RegEx go [here](https://agileforall.com/wp-content/uploads/2011/08/Cucumber-Regular-Expressions-Cheat-Sheet.pdf)
+Then check [cucumber-ts-flow docs](https://github.com/timjroberts/cucumber-js-tsflow) to get more info about testing features of [Cucumber](https://cucumber.io/) 
