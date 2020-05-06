@@ -25,7 +25,7 @@ export class ExampleSteps {
   }
 
   @then(/I should be told "([^"]*)"/)
-  public accountBalanceShouldEqual(expectedAnswer: string) {
+  public thenShoulBeTold(expectedAnswer: string) {
     assert.equal(this.actualAnswer, expectedAnswer);
   }
 }
