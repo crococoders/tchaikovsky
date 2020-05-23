@@ -40,7 +40,7 @@
 
 4.  Write body of your test:
     
-    - ```javascript
+    ```javascript
         const wrapper = shallow(<MyCompnent title="Hello Jest!" />); // get your component and assign to variable
         expect(wrapper.html()).toMatch('<div>Hello Jest!</div>');
         // check for eqality(or match) you component output with your expected data
@@ -60,6 +60,7 @@
           })
         });
         ```
+    - If you have some functions to be executed after test it can be done in `afterEach()` function
 
 5. Type `npm test` or `npm run test` in command line
 6. Wait until it finishes and check results in command line window
