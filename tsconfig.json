@@ -14,7 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./.webpack/main",
+    "baseUrl": "."
   },
   "include": ["src"]
 }

@@ -5,6 +5,11 @@ module.exports = [
     use: 'node-loader',
   },
   {
+    test: /\.(js|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: "babel-loader",
+  },
+  {
     test: /\.(m?js|node)$/,
     parser: { amd: false },
     use: {

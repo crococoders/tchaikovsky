@@ -1,7 +1,7 @@
 {
-  "name": "template-ts-webp",
-  "productName": "template-ts-webp",
-  "version": "1.0.0",
+  "name": "scaffold-electron-boilerplate",
+  "productName": "scaffold-electron-boilerplate",
+  "version": "0.1.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "keywords": [],
@@ -20,7 +20,8 @@
     "test:snapshot": "jest --updateSnapshot",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "cucumber": "cucumber-js"
+    "cucumber": "cucumber-js",
+    "check-types": "tsc"
   },
   "config": {
     "forge": {
@@ -118,6 +119,10 @@
     "@types/react-test-renderer": "^16.9.2",
     "and": "0.0.3",
     "chromedriver": "^81.0.0",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "gherkin": "^9.0.0",
     "react": "^16.13.1",
