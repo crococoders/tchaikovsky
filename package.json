@@ -15,7 +15,7 @@
         "package": "electron-forge package",
         "make": "electron-forge make",
         "publish": "electron-forge publish",
-        "lint": "eslint --ext .ts .",
+        "lint": "eslint --ext .ts . --color",
         "test": "jest",
         "test:snapshot": "jest --updateSnapshot",
         "test:watch": "jest --watch",
