@@ -1,130 +1,129 @@
 {
-  "name": "tchaikovsky",
-  "productName": "tchaikovsky",
-  "version": "0.1.0",
-  "description": "Cross-platform Yandex Music desktop application",
-  "main": ".webpack/main",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts . --fix --color"
-  },
-  "keywords": [],
-  "author": {
-    "name": "abdigali",
-    "email": "abdigali2@gmail.com"
-  },
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "template_ts_webp"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "plugins": [
-        [
-          "@electron-forge/plugin-webpack",
-          {
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
+    "name": "tchaikovsky",
+    "productName": "tchaikovsky",
+    "version": "0.1.0",
+    "description": "Cross-platform Yandex Music desktop application",
+    "main": ".webpack/main",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "lint": "eslint --ext .ts . --fix --color"
+    },
+    "keywords": [],
+    "author": {
+        "name": "abdigali",
+        "email": "abdigali2@gmail.com"
+    },
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "packagerConfig": {},
+            "makers": [
                 {
-                  "html": "./src/index.html",
-                  "js": "./src/App.tsx",
-                  "name": "main_window"
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {
+                        "name": "template_ts_webp"
+                    }
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-rpm",
+                    "config": {}
                 }
-              ]
-            }
-          }
+            ],
+            "plugins": [
+                [
+                    "@electron-forge/plugin-webpack",
+                    {
+                        "mainConfig": "./webpack.main.config.js",
+                        "renderer": {
+                            "config": "./webpack.renderer.config.js",
+                            "entryPoints": [
+                                {
+                                    "html": "./src/index.html",
+                                    "js": "./src/App.tsx",
+                                    "name": "main_window"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@electron-forge/cli": "6.0.0-beta.50",
+        "@electron-forge/maker-deb": "6.0.0-beta.50",
+        "@electron-forge/maker-rpm": "6.0.0-beta.50",
+        "@electron-forge/maker-squirrel": "6.0.0-beta.50",
+        "@electron-forge/maker-zip": "6.0.0-beta.50",
+        "@electron-forge/plugin-webpack": "6.0.0-beta.50",
+        "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+        "@typescript-eslint/eslint-plugin": "^2.18.0",
+        "@typescript-eslint/parser": "^2.18.0",
+        "css-loader": "^3.0.0",
+        "electron": "8.2.1",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.20.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "husky": "^4.2.5",
+        "lint-staged": ">=10",
+        "node-loader": "^0.6.0",
+        "prettier": "^2.0.5",
+        "style-loader": "^0.23.1",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.0"
+    },
+    "dependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/preset-react": "^7.9.4",
+        "@babel/preset-typescript": "^7.9.0",
+        "babel-loader": "^8.1.0",
+        "@types/react": "^16.9.34",
+        "@types/react-dom": "^16.9.6",
+        "electron-squirrel-startup": "^1.0.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "rules": {
+            "body-max-length": [
+                1,
+                "always",
+                85
+            ],
+            "scope-empty": [
+                2,
+                "always"
+            ]
+        }
+    },
+    "lint-staged": {
+        "*.ts": [
+            "npm run lint"
         ]
-      ]
     }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@electron-forge/cli": "6.0.0-beta.50",
-    "@electron-forge/maker-deb": "6.0.0-beta.50",
-    "@electron-forge/maker-rpm": "6.0.0-beta.50",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.50",
-    "@electron-forge/maker-zip": "6.0.0-beta.50",
-    "@electron-forge/plugin-webpack": "6.0.0-beta.50",
-    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
-    "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
-    "css-loader": "^3.0.0",
-    "electron": "8.2.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "fork-ts-checker-webpack-plugin": "^3.1.1",
-    "husky": "^4.2.5",
-    "lint-staged": ">=10",
-    "node-loader": "^0.6.0",
-    "prettier": "^2.0.5",
-    "style-loader": "^0.23.1",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.0"
-  },
-  "dependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "@babel/preset-typescript": "^7.9.0",
-    "babel-loader": "^8.1.0",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
-    "electron-squirrel-startup": "^1.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-length": [
-        1,
-        "always",
-        85
-      ],
-      "scope-empty": [
-        2,
-        "always"
-      ]
-    }
-  },
-  "lint-staged": {
-    "*.ts": [
-      "npm run lint"
-    ]
-  }
 }
