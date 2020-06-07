@@ -1,0 +1,9 @@
+version: '3'
+services:
+      http_server:
+          container_name: yandex_server
+          ports:
+            - 8080:8000
+          build:
+            context: .
+            dockerfile: Dockerfile
