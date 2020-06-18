@@ -1,11 +1,20 @@
 {
     "editor.autoFixOnSave": true,
-    "editor.validate": ["javascript", { "language": "typescript", "autoFix": true }],
+    "editor.validate": [
+        "javascript",
+        {
+            "language": "typescript",
+            "autoFix": true
+        }
+    ],
     "editor.formatOnSave": true,
-    "editor.rulers": [100],
+    "editor.rulers": [
+        100
+    ],
     "files.autoSave": "onFocusChange",
     "workbench.iconTheme": "vscode-icons",
     "materialTheme.accent": "Acid Lime",
     "workbench.colorTheme": "Community Material Theme High Contrast",
-    "workbench.settings.useSplitJSON": true
+    "workbench.settings.useSplitJSON": true,
+    "gitlens.hovers.currentLine.over": "line"
 }
