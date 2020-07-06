@@ -1,0 +1,17 @@
+@import "./styles/colors";
+
+// @font-face {
+//     font-family: "NotoSansJP";
+//     src: url('static/fonts/NotoSansJP-Regular.ttf') format("truetype");
+// }
+// @mixin NotoSansJP {
+//     font-family: "NotoSansJP" ;
+// }
+
+body {
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  // @include NotoSansJP; 
+  color: $red;
+}

@@ -3,7 +3,7 @@
   "productName": "tchaikovsky",
   "version": "0.1.0",
   "description": "Cross-platform Yandex Music desktop application",
-  "main": ".webpack/main",
+  "main": "./.webpack/main",
   "keywords": [],
   "author": {
     "name": "abdigali",
@@ -58,8 +58,8 @@
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
                 {
-                  "html": "./src/index.html",
-                  "js": "./src/App.tsx",
+                  "html": "./static/index.html",
+                  "js": "./app/renderer/renderer.tsx",
                   "name": "main_window"
                 }
               ]
@@ -70,6 +70,8 @@
     }
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@electron-forge/cli": "6.0.0-beta.50",
     "@electron-forge/maker-deb": "6.0.0-beta.50",
     "@electron-forge/maker-rpm": "6.0.0-beta.50",
@@ -84,9 +86,10 @@
     "@types/node": "^13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
+    "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "css-loader": "^3.0.0",
+    "css-loader": "^3.6.0",
     "cucumber": "^6.0.5",
     "cucumber-pretty": "^6.0.0",
     "electron": "8.2.1",
@@ -96,27 +99,31 @@
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "husky": "^4.2.5",
     "jest": "^25.3.0",
     "jest-cli": "^25.3.0",
     "jsdom": "16.2.2",
     "jsdom-global": "3.0.2",
+    "lint-staged": ">=10",
     "mocha": "^7.1.1",
     "node-fetch": "^2.6.0",
     "node-loader": "^0.6.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
+    "sass-loader": "^9.0.1",
     "spectron": "^10.0.1",
     "style-loader": "^0.23.1",
     "ts-jest": "^25.4.0",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^6.2.2",
     "ts-node": "^8.10.1",
-    "typescript": "^3.7.0",
-    "husky": "^4.2.5",
-    "lint-staged": ">=10",
-    "prettier": "^2.0.5",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4"
+    "typescript": "^3.7.0"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@hot-loader/react-dom": "^16.13.0",
     "@types/chai": "^4.2.11",
     "@types/enzyme": "^3.10.5",
     "@types/mocha": "^7.0.2",
@@ -125,14 +132,11 @@
     "@types/react-test-renderer": "^16.9.2",
     "and": "0.0.3",
     "chromedriver": "^81.0.0",
-    "@babel/core": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "@babel/preset-typescript": "^7.9.0",
-    "babel-loader": "^8.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "gherkin": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
     "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "husky": {
