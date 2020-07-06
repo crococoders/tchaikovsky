@@ -16,7 +16,7 @@ module.exports = rules = [
     },
   },
   {
-    test: /\.tsx?$/,
+    test: /\.(js|jsx|ts|tsx)$/,
     exclude: /(node_modules|.webpack)/,
     loaders: [
       {

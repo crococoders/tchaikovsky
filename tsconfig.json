@@ -18,7 +18,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "outDir": "./.webpack/main",
-    "module": "commonjs",
+    "module": "es6",
     "noImplicitAny": true,
     "sourceMap": true,
     "jsx": "react",

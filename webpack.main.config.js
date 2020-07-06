@@ -18,6 +18,8 @@ module.exports = {
       '@main': srcPaths('app/main'),
       '@models': srcPaths('app/models'),
       '@renderer': srcPaths('app/renderer'),
+      '@components': path.resolve('app/renderer/component'),
+      '@styles': path.resolve('static/styles')
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
   },
