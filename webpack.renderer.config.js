@@ -1,6 +1,8 @@
 const rules = require("./webpack.rules");
 
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const assets = ['styles', 'fonts']; // asset directories
 
 function srcPaths(src) {
     return path.join(__dirname, src);
@@ -18,6 +20,16 @@ module.exports = {
     module: {
         rules,
     },
+    plugins: assets.map(asset => {
+        return new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'static', asset),
+                    to: path.resolve(__dirname, '.webpack/renderer', asset)
+                }
+            ]
+        });
+    }),
     resolve: {
         alias: {
             '@main': srcPaths('app/main'),

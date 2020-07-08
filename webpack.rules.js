@@ -31,7 +31,22 @@ module.exports = rules = [
   },
   {
     test: /\.(scss|css)$/,
-    use: ["style-loader", "css-loader", "sass-loader"],
+    use: [
+      {
+        // translates CSS into CommonJS
+        loader: 'style-loader',
+        options: { sourceMap: true }
+      },
+      {
+        // translates CSS into CommonJS
+        loader: 'css-loader',
+        options: { sourceMap: true }
+      },
+      {
+        // compiles Sass to CSS
+        loader: 'sass-loader',
+        options: { sourceMap: true }
+      },],
   },
   {
     test: /\.(svg|ico|icns)$/,
@@ -41,10 +56,29 @@ module.exports = rules = [
     },
   },
   {
-    test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
-    loader: "url-loader",
-    options: {
-      name: "[path][name].[ext]",
-    },
+    test: /\.(jpg|gif|png)$/,
+    use: {
+      loader: "file-loader",
+      options: {
+        name(file) {
+          return '[hash].[ext]';
+        },
+        limit: 1e5,
+        outputPath: 'imgs',
+        publicPath: '/imgs'
+      },
+    }
   },
+  {
+    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    use: [
+      {
+        loader: 'url-loader',
+        options: {
+          name: '[name].[ext]',
+        }
+      }
+    ]
+  },
+
 ];

@@ -1,8 +1,11 @@
 @import "./styles/colors";
+@import "./styles/fonts";
+
 
 body {
+  font-family: $font-family;
   margin: auto;
   max-width: 38rem;
   padding: 2rem; 
-  color: $red;
+  color: $text_main;
 }
