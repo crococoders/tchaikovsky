@@ -1,12 +1,12 @@
-var React = require('react');
-import { hot } from "react-hot-loader/root";
-import { Heading } from './Heading/Heading';
+var React = require("react");
+import { hot as App } from "react-hot-loader/root";
+import { Heading } from "./Heading/Heading";
 
-export default hot((): JSX.Element =>
-  (
+export default App(
+  (): JSX.Element => (
     <div>
-      <h1>
-        Your Electron Project
-      </h1>
+      <h1>Your Electron Project</h1>
+      <div className="title--bold_48">Title bold 48</div>
     </div>
-  ));
+  ),
+);

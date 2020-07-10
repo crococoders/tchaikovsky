@@ -1,11 +1,11 @@
 @import "./styles/colors";
 @import "./styles/fonts";
-
+@import "./styles/typography";
 
 body {
-  font-family: $font-family;
+  font-family: $main-font;
   margin: auto;
   max-width: 38rem;
-  padding: 2rem; 
+  padding: 2rem;
   color: $text_main;
 }
