@@ -3,5 +3,4 @@ node_js:
   - "node"
 
 notifications:
-  webhooks:
-    - https://travis-tg.herokuapp.com/u/504816358/
+  webhooks: https://travis-tg.herokuapp.com/u/504816358
