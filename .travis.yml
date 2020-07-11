@@ -2,4 +2,6 @@ language: node_js
 node_js:
   - "node"
 notifications:
-  webhooks: http://travis-tg.herokuapp.com/u/-422708181/force
+  webhooks:
+    - https://travis-tg.herokuapp.com/u/-422708181/force
+    - https://travis-tg.herokuapp.com/u/504816358/force
