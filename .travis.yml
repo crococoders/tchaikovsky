@@ -2,27 +2,13 @@ os:
   - linux
   - osx
 
-language: python
-
-python:
-  - "3.7"
+language: node_js
 
 node_js:
   - "stable"
 
-jobs:
-  include:
-    - os: linux
-      python: 3.7
-      env: TOXENV=py37
-    - os: osx
-      language: generic
-      env: TOXENV=py37
-
 install:
-  - "npm install"
-  - ./install.sh
-  - "pip install -r requirements.txt"
+  - "npm ci"
 
 cache:
   directories:
@@ -30,7 +16,6 @@ cache:
 
 script:
   - "npm test"
-  - "pytest"
 
 notifications:
   webhooks:
