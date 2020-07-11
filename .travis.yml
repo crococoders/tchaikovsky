@@ -15,4 +15,4 @@ script:
 
 notifications:
   webhooks:
-    - "https://travis-tg.herokuapp.com/u/-422708181/force"
+    - https://travis-tg.herokuapp.com/u/-1001161950854/force
