@@ -1,10 +1,18 @@
-language: node_js
+os:
+  - linux
+  - osx
+
+language: python
+
+python:
+  - "3.7"
 
 node_js:
   - "stable"
 
 install:
   - "npm install"
+  - "pip install -r requirements.txt"
 
 cache:
   directories:
@@ -12,7 +20,8 @@ cache:
 
 script:
   - "npm test"
+  - "pytest"
 
 notifications:
   webhooks:
-    - https://travis-tg.herokuapp.com/u/-1001161950854/force
+    - https://travis-tg.herokuapp.com/u/-422708181/force
