@@ -1,11 +1,27 @@
-language: node_js
+os:
+  - linux
+  - osx
+
+language: python
+
+python:
+  - "3.7"
+
 node_js:
- - "node"
+  - "stable"
+
+install:
+  - "npm install"
+  - "pip install -r requirements.txt"
+
+cache:
+  directories:
+    - "node_modules"
+
+script:
+  - "npm test"
+  - "pytest"
+
 notifications:
-  webhooks: 
+  webhooks:
     - https://travis-tg.herokuapp.com/u/-422708181/force
-    on_success: change # default: always
-    on_failure: always # default: always
-    on_start:   change # default: never
-    on_cancel:  always # default: always
-    on_error:   always # default: always
