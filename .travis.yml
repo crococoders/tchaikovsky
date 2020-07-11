@@ -1,6 +1,17 @@
 language: node_js
+
 node_js:
-  - "node"
+  - "stable"
+install:
+  - npm install
+
+cache:
+  directories:
+    - "node_modules"
+
+script:
+  - "npm test"
 
 notifications:
-  webhooks: https://travis-tg.herokuapp.com/u/504816358
+  webhooks:
+    - "https://travis-tg.herokuapp.com/u/-422708181/force"
