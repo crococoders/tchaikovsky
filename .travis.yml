@@ -2,4 +2,10 @@ language: node_js
 node_js:
  - "node"
 notifications:
-  webhooks: https://travis-tg.herokuapp.com/u/-422708181/force
+  webhooks: 
+    - https://travis-tg.herokuapp.com/u/-422708181/force
+    on_success: change # default: always
+    on_failure: always # default: always
+    on_start:   change # default: never
+    on_cancel:  always # default: always
+    on_error:   always # default: always
