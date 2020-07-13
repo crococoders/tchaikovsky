@@ -1,4 +1,5 @@
-import * as React from 'react';
+import * as React from "react";
+import "./Heading.scss";
 
 type HeadingProps = {
   title?: string;
@@ -20,7 +21,7 @@ export class Heading extends React.Component<HeadingProps, HeadingState> {
 
   render() {
     return (
-      <h1 onClick={this.handleClick}>
+      <h1 className="heading-title" onClick={this.handleClick}>
         {this.props.title ? this.props.title : this.props.children}
       </h1>
     );

@@ -2,6 +2,7 @@
 
 exports[`Snapshot testing Heading Should renders correctly 1`] = `
 <h1
+  className="heading-title"
   onClick={[Function]}
 >
   Hello Jest1!

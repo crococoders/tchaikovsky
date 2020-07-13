@@ -20,33 +20,42 @@ module.exports = rules = [
     exclude: /(node_modules|.webpack)/,
     loaders: [
       {
-        loader: 'babel-loader'
+        loader: "babel-loader",
       },
       {
-        loader: 'ts-loader',
+        loader: "ts-loader",
         options: {
-          transpileOnly: true
-        }
-      }]
+          transpileOnly: true,
+        },
+      },
+    ],
   },
   {
     test: /\.(scss|css)$/,
     use: [
       {
         // translates CSS into CommonJS
-        loader: 'style-loader',
-        options: { sourceMap: true }
+        loader: "style-loader",
+        options: { sourceMap: true },
       },
       {
         // translates CSS into CommonJS
-        loader: 'css-loader',
-        options: { sourceMap: true }
+        loader: "css-loader",
+        options: { sourceMap: true },
       },
       {
         // compiles Sass to CSS
-        loader: 'sass-loader',
-        options: { sourceMap: true }
-      },],
+        loader: "sass-loader",
+        options: { sourceMap: true },
+      },
+      {
+        loader: "sass-resources-loader",
+        options: {
+          // Provide path to the file with resources
+          resources: "./static/index.scss",
+        },
+      },
+    ],
   },
   {
     test: /\.(svg|ico|icns)$/,
@@ -61,24 +70,23 @@ module.exports = rules = [
       loader: "file-loader",
       options: {
         name(file) {
-          return '[hash].[ext]';
+          return "[hash].[ext]";
         },
         limit: 1e5,
-        outputPath: 'imgs',
-        publicPath: '/imgs'
+        outputPath: "imgs",
+        publicPath: "/imgs",
       },
-    }
+    },
   },
   {
     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
     use: [
       {
-        loader: 'url-loader',
+        loader: "url-loader",
         options: {
-          name: '[name].[ext]',
-        }
-      }
-    ]
+          name: "[name].[ext]",
+        },
+      },
+    ],
   },
-
 ];

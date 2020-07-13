@@ -1,0 +1,11 @@
+.example-title {
+  @include title($size: 40px);
+}
+
+.example-content {
+  @include content($size: 16px, $weight: bold);
+}
+
+.example-element {
+  @include element($size: 10px, $color: $text_secondary);
+}
