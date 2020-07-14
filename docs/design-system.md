@@ -1,8 +1,8 @@
+
 #Design System
 
-
-####Creating component's style
-Here is path of your component`./component/Example/Example.tsx`
+#### Creating component's style
+Here is path of your component`@components/Example/Example.tsx`
 Create in this folder `Example.scss` where you will write your styles
 
 Import your styles after `react`
@@ -18,7 +18,7 @@ Use `camelCase` in naming with BEM methodology
 <div className="example">Example</div>
 ```
 
-####How to use mixins in component's style
+#### How to use mixins in component's style
 
 `Example.scss`
 ```scss
@@ -32,9 +32,9 @@ Use `camelCase` in naming with BEM methodology
 }
 ```
 
-###How to use _colors.scss, _fonts.scss, _typography.scss
+### How to use _colors.scss, _fonts.scss, _typography.scss
 
-#####`_colors.scss`
+##### `_colors.scss`
 ```scss
 $red: #EC3944;
 $red_dark: #B6353D;
@@ -51,7 +51,7 @@ $red_light: #F89299;
 }
 ```
 ---
-#####`_fonts.scss`
+##### `_fonts.scss`
 ```scss
 
 $main-font: "Noto Sans JP";
@@ -65,7 +65,7 @@ $main-font: "Noto Sans JP";
 }
 ```
 ---
-#####`_typography.scss`
+##### `_typography.scss`
 ```scss
 ...
 @mixin content($weight: normal, $size: 14px, $color: $text-main) {
@@ -91,10 +91,10 @@ $main-font: "Noto Sans JP";
 }
 ```
 ---
-All mixins and variables that declared in `./static/styles/` are visible in components' styles scope
+All mixins and variables that declared in `@styles` are visible in components' styles scope
 
 
-####Variables in SCSS
+#### Variables in SCSS
 To declare `scss` variable you should start name with `$` (dollar sign)
 For example:
 ```scss
@@ -112,7 +112,7 @@ $myBestColor = #000000;
 To learn more about variables go [here](https://www.w3schools.com/sass/sass_variables.asp)
 
 
-####How to write mixins
+#### How to write mixins
 Mixin works as a function that accept parameters, then returns css properties
 
 ```scss
