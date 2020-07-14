@@ -2,7 +2,7 @@
 
 
 #### Creating component's style
-Here is path of your component`./component/Example/Example.tsx`
+Here is path of your component`@components/Example/Example.tsx`
 Create in this folder `Example.scss` where you will write your styles
 
 Import your styles after `react`
@@ -91,7 +91,7 @@ $main-font: "Noto Sans JP";
 }
 ```
 ---
-All mixins and variables that declared in `./static/styles/` are visible in components' styles scope
+All mixins and variables that declared in `@styles` are visible in components' styles scope
 
 
 #### Variables in SCSS
