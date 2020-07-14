@@ -1,4 +1,4 @@
-#Design Systems
+#Design System
 
 
 ####Creating component's style

@@ -1,6 +1,5 @@
 var React = require("react");
-import "./../../static/index.scss";
-import { Heading, Example } from "./component";
+import { Heading, Example } from "@components";
 import { hot as App } from "react-hot-loader/root";
 
 export default App(
