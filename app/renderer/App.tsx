@@ -1,5 +1,5 @@
 var React = require("react");
-import { Heading, Example } from "@components";
+import { Heading, Example } from "./components";
 import { hot as App } from "react-hot-loader/root";
 
 export default App(
