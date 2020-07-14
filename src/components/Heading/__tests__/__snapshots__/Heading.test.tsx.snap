@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Snapshot testing Heading Should renders correctly 1`] = `
-<h1
-  onClick={[Function]}
->
-  Hello Jest1!
-</h1>
-`;

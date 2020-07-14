@@ -1,0 +1,10 @@
+@import "./styles/colors";
+@import "./styles/fonts";
+@import "./styles/typography";
+
+body {
+  font-family: $main-font;
+  margin: auto;
+  max-width: 38rem;
+  color: $text_main;
+}

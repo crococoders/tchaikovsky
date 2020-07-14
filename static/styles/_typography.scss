@@ -1,0 +1,22 @@
+@mixin title($weight: bold, $size: 20px, $color: $text-main) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $size + 8px;
+  color: $color;
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+}
+
+@mixin content($weight: normal, $size: 14px, $color: $text-main) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $size + 4px;
+  color: $color;
+}
+
+@mixin element($weight: normal, $size: 10px, $color: $text-main) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $size + 4px;
+  color: $color;
+}

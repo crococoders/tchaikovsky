@@ -1,14 +1,26 @@
+const path = require('path');
+const rules = require('./webpack.rules');
+
+function srcPaths(src) {
+  return path.join(__dirname, src);
+}
+
 module.exports = {
-  /**
-   * This is the main entry point for your application, it's the first file
-   * that runs in the main process.
-   */
-  entry: './src/index.ts',
-  // Put your normal webpack config below here
+  mode: 'development',
+  devtool: 'source-map',
+  target: 'electron-main',
+  entry: './app/main/main.ts',
   module: {
     rules: require('./webpack.rules'),
   },
   resolve: {
+    alias: {
+      '@main': srcPaths('app/main'),
+      '@models': srcPaths('app/models'),
+      '@renderer': srcPaths('app/renderer'),
+      '@components': path.resolve('app/renderer/component'),
+      '@styles': path.resolve('static/styles')
+    },
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
   },
 };

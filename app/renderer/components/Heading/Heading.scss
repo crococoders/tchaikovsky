@@ -1,0 +1,4 @@
+.heading-title {
+  @include title($size: 50px);
+  color: blue;
+}
