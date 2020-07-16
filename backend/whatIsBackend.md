@@ -32,7 +32,9 @@ Overall backend developer works with the following
 
 link https://auth0.com/docs/authorization/concepts/authz-and-authn (authentication vs authorization)
 
-- Token, marshal in his library uses OAuth 2 tokenization. We will receive password and login from user, and create token by method which will be stored in our backend, granting access while you logout. 
+- Token, marshal in his library uses OAuth (probably 2.0). We will receive password and login from user, and create token by method (generate_token_by_username_and_password) which will be stored in our backend and in server, because method will register token in https://oauth.yandex.ru/token, granting access while you logout. Expiration date of the token is one year.
+
+marshall's example https://github.com/moxxiq/yandex-music-api/blob/add-some-examples/examples/README.md
 
 link https://blog.restcase.com/restful-api-authentication-basics/#:~:text=This%20process%20consists%20of%20sending,Authorization%20occurs%20after%20successful%20authentication. (OAuth 1.0 vs OAuth 2.0)
 
