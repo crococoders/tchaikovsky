@@ -36,9 +36,10 @@ module.exports = {
       "@models": srcPaths("app/models"),
       "@renderer": srcPaths("app/renderer"),
       "react-dom": "@hot-loader/react-dom",
-      "@components": path.resolve("app/renderer/components"),
-      "@styles": path.resolve("static/styles"),
+      "@static": srcPaths('./static'),
+      "@styles": srcPaths('./static/styles'),
+      "@components": srcPaths('./app/renderer/components'),
     },
-    extensions: [".js", ".ts", ".tsx", ".jsx", ".json"],
+    extensions: [".js", ".ts", ".tsx", ".jsx", ".json", "scss"],
   },
 };

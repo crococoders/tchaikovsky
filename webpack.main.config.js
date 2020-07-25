@@ -18,9 +18,10 @@ module.exports = {
       '@main': srcPaths('app/main'),
       '@models': srcPaths('app/models'),
       '@renderer': srcPaths('app/renderer'),
-      '@components': path.resolve('app/renderer/component'),
-      '@styles': path.resolve('static/styles')
+      "@static": srcPaths('./static'),
+      "@styles": srcPaths('./static/styles'),
+      "@components": srcPaths('./app/renderer/components'),
     },
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json', '.scss']
   },
 };
