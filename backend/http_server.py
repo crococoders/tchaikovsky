@@ -53,6 +53,7 @@ class S(BaseHTTPRequestHandler):
             else:
                 try:
                     token = client1.generate_token_by_username_and_password(username=data['login'], password=data['password'])
+                    print(token)
                     self._set_response(200)
                     self.wfile.write("OK".encode('utf-8'))
                 except:
