@@ -90,3 +90,6 @@ out/
 
 # VS Code
 .vscode/
+
+# idea files
+.idea

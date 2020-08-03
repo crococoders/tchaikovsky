@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,15 +12,17 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "outDir": "./.webpack/main",
     "module": "es6",
     "noImplicitAny": true,
     "sourceMap": true,
     "jsx": "react",
-    "baseUrl": "."
+    "baseUrl": "./",
+    "paths": {
+      "@static": ["./static"],
+      "@styles": ["./static/styles"],
+      "@components": ["./app/renderer/components"]
+    }
   },
-  "include": [
-    "app"
-  ]
+  "include": ["app"]
 }
