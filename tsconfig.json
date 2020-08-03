@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,9 +17,12 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "jsx": "react",
-    "baseUrl": "."
+    "baseUrl": "./",
+    "paths": {
+      "@static": ["./static"],
+      "@styles": ["./static/styles"],
+      "@components": ["./app/renderer/components"]
+    }
   },
-  "include": [
-    "app"
-  ]
+  "include": ["app"]
 }
