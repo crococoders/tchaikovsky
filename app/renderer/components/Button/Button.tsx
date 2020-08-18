@@ -4,7 +4,7 @@ import "./Button.scss";
 type ButtonProps = {
     title?: string;
     disabled?: boolean;
-    action: Function;
+    action: (event: React.MouseEvent<HTMLElement>) => void;
     children?: React.ReactNode;
 };
 
