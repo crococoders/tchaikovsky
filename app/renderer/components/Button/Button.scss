@@ -1,0 +1,30 @@
+.button{
+    @include content($size: 16px, $weight: bold); 
+    background-color: $red;
+    color: $main_white;
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    margin: 16px 0px;
+}
+
+.button:hover{
+    background-color: $red_dark;
+    color: $secondary_white;
+}
+
+.button:active{
+    background-color: $red_dark;
+    color: $secondary_white;
+    transform:scale(0.99,0.97);
+}
+
+
+.button:disabled{
+    background-color: $disabled;
+    color: $disabled_white;
+}
