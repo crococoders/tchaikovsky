@@ -1,0 +1,35 @@
+.soundBarContainer {
+  margin: 20px 0;
+  .bar {
+    position: relative;
+    float: left;
+    background-color: #ec3944;
+    height: 21px;
+    margin-right: 1.5px;
+    width: 2px;
+    animation: jump 0ms -800ms linear infinite alternate;
+    border-radius: 25%;
+  }
+  @keyframes jump {
+    0% {
+      height: 7px;
+      top: -7px;
+    }
+    100% {
+      top: -15px;
+      height: 21px;
+    }
+  }
+
+  /* generates a random number in the range 430 - 500*/
+  @function randomDecimal() {
+    @return random(70) + 430;
+  }
+
+  /* adds random animation durations to for up 20 bars; for more, change 20 to a higer value (below) */
+  @for $i from 0 through 8 {
+    .bar:nth-child(#{$i}) {
+      animation-duration: (randomDecimal()) + ms;
+    }
+  }
+}
