@@ -1,17 +1,9 @@
-import React from 'react';
-import { Button } from '@storybook/react/demo';
-import App from '../App'
+import React from "react";
+import App from "../App";
+import { Slider } from "../components/Slider/Slider";
 
-export default { title: 'Button' };
+export default { title: "Test components" };
 
-export const withText = () => <Button>Hello Button</Button>;
+export const app = () => <App></App>;
 
-export const withEmoji = () => (
-    <Button>
-        <span role="img" aria-label="so cool">
-            😀 😎 👍 💯
-    </span>
-    </Button>
-);
-
-export const test = () => <App></App>;
+export const slider_component = () => <Slider value="80" max="300"></Slider>;

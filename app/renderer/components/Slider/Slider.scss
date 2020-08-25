@@ -1,0 +1,57 @@
+.slider-container {
+  display: flex;
+  align-items: center;
+
+  &__time {
+    @include content($size: 10px, $weight: normal);
+    text-align: center;
+    color: $text_secondary;
+  }
+  &__slider {
+    cursor: pointer;
+    outline: none;
+    margin: 0.1em 0 0 0;
+  }
+  /** FF*/
+  &__slider::-moz-range-progress {
+    background-color: $red;
+  }
+  &__slider::-moz-range-track {
+    background-color: $line;
+  }
+  /* IE*/
+  &__slider::-ms-fill-lower {
+    background-color: $red;
+  }
+  &__slider::-ms-fill-upper {
+    background-color: $line;
+  }
+  /*Chrome*/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    &__slider {
+      border-radius: 8px;
+      overflow: hidden;
+      width: 150px;
+      -webkit-appearance: none;
+      background-color: $line;
+    }
+
+    &__slider::-webkit-slider-runnable-track {
+      height: 4px;
+      -webkit-appearance: none;
+    }
+
+    &__slider::-webkit-slider-thumb {
+      width: 0px;
+      -webkit-appearance: none;
+      box-shadow: -80px 0 0 80px $red;
+    }
+  }
+}
+
+.slider-container__time_mr {
+  margin-right: 0.8em;
+}
+.slider-container__time_ml {
+  margin-left: 0.8em;
+}
