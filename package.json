@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron-forge start",
-    "start:server": "sudo docker run -it -p 8080:8000 nartayzhanybekov/tchaikovsky",
+    "start:server": "sudo docker run -it -p 8000:5000 nartayzhanybekov/tchaikovsky:flaskapp",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -22,13 +22,13 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "cucumber": "cucumber-js",
-    "check-types": "tsc"
+    "check-types": "tsc",
+    "push:docker": "docker push nartayzhanybekov/tchaikovsky:flaskapp"
   },
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [
-        {
+      "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "template_ts_webp"
@@ -56,13 +56,11 @@
             "mainConfig": "./webpack.main.config.js",
             "renderer": {
               "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/App.tsx",
-                  "name": "main_window"
-                }
-              ]
+              "entryPoints": [{
+                "html": "./src/index.html",
+                "js": "./src/App.tsx",
+                "name": "main_window"
+              }]
             }
           }
         ]
