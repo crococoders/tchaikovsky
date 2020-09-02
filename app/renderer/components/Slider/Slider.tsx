@@ -2,8 +2,8 @@ import * as React from "react";
 import "./Slider.scss";
 
 type SliderProps = {
-  max?: string;
-  value?: string;
+  max: string;
+  value: string;
   children?: React.ReactNode;
 };
 
@@ -13,26 +13,21 @@ type SliderStates = {
 };
 
 export class Slider extends React.Component<SliderProps, SliderStates> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      value: props.value,
-      max: props.max,
-    };
+  state: SliderStates = {
+    value: this.props.value,
+    max: this.props.max,
+  };
 
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event: any): void {
+  handleChange = (event: any): void => {
     this.setState({ value: event.target.value });
-  }
+  };
 
   timeFormat = (time: string): string => {
-    var convertedTime = parseInt(time);
-    var minute = ~~(convertedTime / 60);
-    var seconds = convertedTime % 60;
+    const convertedTime = parseInt(time);
+    const minute = ~~(convertedTime / 60);
+    const seconds = convertedTime % 60;
 
-    var res =
+    const res =
       (convertedTime < 60 ? "00" : minute < 10 ? "0" + minute : minute) +
       ":" +
       (convertedTime < 60
