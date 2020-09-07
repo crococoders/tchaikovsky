@@ -11,7 +11,7 @@ export default App(
       <h1>Your Electron Project</h1>
       <Heading title="Hello" />
       <Example>Element</Example>
-      <SoundBar></SoundBar>
+      <SoundBar />
     </div>
   ),
 );
