@@ -1,0 +1,20 @@
+.input-form-group {
+  display: flex;
+  flex-direction: column;
+  & > label {
+    @include element($color: $text_secondary);
+    margin-bottom: 4px;
+  }
+  & > .input {
+    @include content($weight: bold, $size: 16px, $color: $text_main);
+    height: 48px;
+    padding-left: 8px;
+    background-color: $backgroud_secondary;
+    border: 1px solid $line;
+    border-radius: 8px;
+    outline: none;
+    &::placeholder {
+      font-weight: normal;
+    }
+  }
+}

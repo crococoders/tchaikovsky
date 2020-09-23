@@ -2,6 +2,9 @@
     @include content($size: 16px, $weight: bold); 
     background-color: $red;
     color: $main_white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     width: 100%;
     border-radius: 8px;
@@ -10,6 +13,7 @@
     outline: none;
     cursor: pointer;
     margin: 16px 0px;
+    
 }
 
 .button:hover{
@@ -27,4 +31,18 @@
 .button:disabled{
     background-color: $disabled;
     color: $disabled_white;
+}
+
+.loading{
+    border: 3px solid $main_white; /* Light grey */
+    border-top: 3px solid $red; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

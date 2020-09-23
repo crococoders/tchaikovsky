@@ -6,6 +6,7 @@ type ButtonProps = {
     disabled?: boolean;
     action: (event: React.MouseEvent<HTMLElement>) => void;
     children?: React.ReactNode;
+    loading?: boolean;
 };
 
 type ButtonState = {};
@@ -20,7 +21,12 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 className="button"
                 onClick={this.props.action}
                 disabled={this.props.disabled}>
-                {this.props.title ? this.props.title : this.props.children}
+                {this.props.loading ?
+                    (
+                        <div className="loading">
+                        </div>
+                    )
+                    : this.props.title ? this.props.title : this.props.children}
             </button>
         );
     }
