@@ -14,7 +14,21 @@
     border-radius: 8px;
     outline: none;
     &::placeholder {
-      font-weight: normal;
+      @include content($weight: normal, $size: 16px, $color: $text_secondary);
+    }
+
+    &-password-eye {
+      align-self: flex-end;
+      color: $text_secondary;
+      &_btn {
+        position: absolute;
+        border: none;
+        align-self: flex-end;
+        background-color: transparent;
+        padding: 33px 10px 10px 0;
+        outline: none;
+        cursor: pointer;
+      }
     }
   }
 }

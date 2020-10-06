@@ -140,6 +140,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
+    "react-icons": "^3.11.0",
     "sass-resources-loader": "^2.0.3",
     "selenium-webdriver": "^4.0.0-alpha.7"
   },

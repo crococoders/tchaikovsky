@@ -7,7 +7,7 @@ export default App(
     <div>
       <h1>Your Electron Project</h1>
       <Button title="123" loading={false} action={() => console.log(123)} />
-      <Input />
+      <Input label="Password" type="password" />
     </div>
   ),
 );
