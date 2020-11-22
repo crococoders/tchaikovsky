@@ -1,0 +1,54 @@
+osx_image: xcode10.2
+
+dist: trusty
+
+sudo: required
+
+language: node_js
+node_js: "10"
+
+os:
+  - linux
+  - osx
+
+env:
+  global:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
+cache:
+  yarn: true
+  directories:
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+    - $HOME/.npm
+
+addons:
+  chrome: stable
+
+install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install yarn; fi
+  - yarn
+
+script:
+  - echo "Unit Tests"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then xvfb-run yarn test; else yarn test; fi
+
+  - echo "E2E Tests"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then xvfb-run yarn test; else yarn test; fi
+
+  - echo "Deploy linux version to GitHub"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn release:linux; fi
+
+  - echo "Deploy windows version to GitHub"
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn release:win; fi
+
+  - echo "Deploy mac version to GitHub"
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn release:mac; fi
+
+before_cache:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm -rf $HOME/.cache/electron-builder/wine; fi
+
+notifications:
+  webhooks:
+    - https://travis-tg.herokuapp.com/u/-422708181/force
