@@ -107,7 +107,7 @@
     "install": "^0.13.0",
     "jest": "^25.3.0",
     "jest-cli": "^25.3.0",
-    "jsdom": "16.2.2",
+    "jsdom": "16.5.0",
     "jsdom-global": "3.0.2",
     "lint-staged": ">=10",
     "mocha": "^7.1.1",
